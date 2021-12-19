@@ -12,4 +12,5 @@ public class RejestracjaPacjentowApplication {
 		SpringApplication.run(RejestracjaPacjentowApplication.class, args);
 	}
 
+
 }

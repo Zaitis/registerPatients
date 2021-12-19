@@ -1,0 +1,9 @@
+package pl.painm.rejestracjaPacjentow.model;
+
+public enum ClinicEnum {
+    ALERGOLOGIA, ENDOKRONOLOGIA, DIABETOLOGIA, GASTROLOGIA,
+    KARDIOLOGIA, HEMATOLOGIA, PULMONOLOGIA, GINEKOLOGIA,
+    NEFROLOGIA, DERMATOLOGIA
+
+
+}

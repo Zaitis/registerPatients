@@ -1,5 +1,5 @@
  <!DOCTYPE html>
-<html>
+ <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 
 <title>index.html</title>
@@ -26,7 +26,12 @@
        METHOD="POST">
 	<label>Imię: <input type="text" name="name"></label> <br />
 	<label>Nazwisko: <input type="text" name="surname"></label><br />
-	<label>Przychodnia: <input type="text" name="przychodnia"></label><br />
+	<label>Przychodnia: <select name="przychodnia">
+		<option th:each="clinic : ${T(pl.painm.rejestracjaPacjentow.model.ClinicEnum).values()}"
+				th:value="${clinic}"
+				th:text="${clinic}">
+		</option>
+	</select></label><br />
 	<label>Zamiany poranne? <input type="checkbox"></label><br />
 	<label> Jakie dni? <br />
 	
@@ -37,7 +42,7 @@
 	Pt<input type="checkbox" name="friday"	><br />
 	<input type="submit" value="Dodaj">
 	
-	</form>
+	</label></form>
 	</div>
 	<div style="clear:both;"></div>
 	

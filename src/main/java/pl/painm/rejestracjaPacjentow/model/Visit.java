@@ -18,9 +18,10 @@ public class Visit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idVisit;
+    private long id;
     private long idDoctor;
     private long idPatient;
     private Date date;
-    private int visitNumber;
+    private int numberVisit;
+
 }

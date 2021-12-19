@@ -16,7 +16,7 @@ import javax.persistence.Id;
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idPatient;
+    private long id;
     private String pesel;
     private String name;
     private String surname;

@@ -21,10 +21,11 @@ public class PatientController {
 
 
 @RequestMapping(value = "/patient", method = RequestMethod.POST,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-public void  addPacjent(Patient patient){
+public String  addPacjent(Patient patient){
      patient.setKartoteka("BRAK");
         patientService.saveAs(patient);
     System.out.println("Pacjent dodany do bazy danych");
+    return "findpatient";
 
 }
 
@@ -48,10 +49,11 @@ public void deletePacjent(@PathVariable("id") Long id){
    patientService.deletePatient(id);
     }
 
-    @RequestMapping(value = "/patients/search", method = RequestMethod.POST,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public String searchPatient(@RequestParam(name= "pesel") String pesel){
+    @RequestMapping(value = "/search", method = RequestMethod.POST,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public String searchPatient(@RequestParam(name= "pesel") String pesel, Model md){
     System.out.println( patientService.findPatientByPesel(pesel));
- //   return patientService.findPatientByPesel(pesel);
-        return "index";
+        md.addAttribute("patients", patientService.findPatientByPesel(pesel));
+        System.out.println(md.getAttribute("patients"));
+        return "patients";
 }
 }

@@ -1,5 +1,5 @@
  <!DOCTYPE html>
-<html>
+ <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 
 <title>index.html</title>
@@ -22,8 +22,12 @@
 	</div>
 	
 	<div id="content">
-		LUDZIE!!!<br />
-	TU NIKOGO NIE MA
+		<select>
+			<option th:each="clinic : ${T(pl.painm.rejestracjaPacjentow.model.ClinicEnum).values()}"
+					th:value="${clinic}"
+					th:text="${clinic}">
+			</option>
+		</select>
 	</div>
 	<div style="clear:both;"></div>
 	
