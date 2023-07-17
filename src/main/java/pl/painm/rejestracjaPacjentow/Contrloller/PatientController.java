@@ -21,16 +21,16 @@ public class PatientController {
 
 
 @RequestMapping(value = "/patient", method = RequestMethod.POST,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-public String  addPacjent(Patient patient){
-     patient.setKartoteka("BRAK");
-        patientService.saveAs(patient);
+public String  addPatient(Patient patient){
+     patient.setPatientFile("BRAK");
+        patientService.save(patient);
     System.out.println("Pacjent dodany do bazy danych");
     return "findpatient";
 
 }
 
 
-    @GetMapping("patients")
+    @GetMapping("/patients")
     public String goPatients(Model model){
         model.addAttribute("patients", patientService.getPatients());
         patientService.getPatients();

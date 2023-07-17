@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class AplicationController {
+public class ApplicationController {
 
 
     @GetMapping("/index")
@@ -12,29 +12,29 @@ public class AplicationController {
         return "index";
     }
 
-    @GetMapping("/adddoctor")
+    @GetMapping("/add-doctor")
     public  static String goAddDoctor(){
-        return "adddoctor";
+        return "add-doctor";
     }
 
-    @GetMapping("/addpatient")
+    @GetMapping("/add-patient")
     public  static String goAddPatient(){
-        return "addpatient";
+        return "add-patient";
     }
 
-    @GetMapping("/finddoctor")
+    @GetMapping("/find-doctor")
     public  static String goFindDoctor(){
-        return "finddoctor";
+        return "find-doctor";
     }
 
-    @GetMapping("/findpatient")
+    @GetMapping("/find-patient")
     public  static String goFindPatient(){
-        return "findpatient";
+        return "find-patient";
     }
 
-    @GetMapping("/newvisit")
+    @GetMapping("/new-visit")
     public  static String goNewVisit(){
-        return "newvisit";
+        return "new-visit";
     }
 
     @GetMapping("/style.css")

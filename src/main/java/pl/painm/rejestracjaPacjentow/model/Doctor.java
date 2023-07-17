@@ -18,10 +18,10 @@ public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String name;
-    private String surname;
-    private String przychodnia;
-    private boolean onMoring;
+    private String firstName;
+    private String lastName;
+    private String clinic;
+    private boolean morningShift;
     private boolean monday;
     private boolean tuesday;
     private boolean wednesday;

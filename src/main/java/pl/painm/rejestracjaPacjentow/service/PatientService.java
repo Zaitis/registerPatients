@@ -14,21 +14,21 @@ public class PatientService {
     private final PatientRepository patientRepository;
 
     public List<Patient> getPatients(){
-        return patientRepository.findAllPatients();
+        return patientRepository.findAll();
     }
 
 
     public Patient getPatient(Long id){
-        return patientRepository.findPatient(id);
+        return patientRepository.findById(id).orElseThrow();
     }
 
 
-    public void saveAs(Patient patient) {
+    public void save(Patient patient) {
         patientRepository.save(patient);
     }
 
     public void deletePatient(Long id){ patientRepository.deleteById(id);}
 
-    public Patient findPatientByPesel(String pesel){return patientRepository.findPatientbyPesel(pesel);
+    public Patient findPatientByPesel(String pesel){return patientRepository.findPatientByPesel(pesel);
     }
 }

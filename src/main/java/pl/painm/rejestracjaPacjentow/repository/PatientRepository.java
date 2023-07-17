@@ -8,14 +8,9 @@ import pl.painm.rejestracjaPacjentow.model.Patient;
 import java.util.List;
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Long> {
-   @Query("SELECT p FROM Patient p")
-    List<Patient> findAllPatients();
 
-   @Query("SELECT p FROM Patient p where idPatient= ?1")
-   Patient findPatient(Long id);
-
-   @Query("SELECT p FROM Patient p where pesel=?1")
-    Patient findPatientbyPesel(String pesel);
+  // @Query("SELECT p FROM Patient p where pesel=?1")
+    Patient findPatientByPesel(String pesel);
 
 
 }
