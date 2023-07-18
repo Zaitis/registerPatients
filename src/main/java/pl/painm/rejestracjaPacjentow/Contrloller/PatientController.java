@@ -24,8 +24,7 @@ public class PatientController {
 public String  addPatient(Patient patient){
      patient.setPatientFile("BRAK");
         patientService.save(patient);
-    System.out.println("Pacjent dodany do bazy danych");
-    return "findpatient";
+    return "find-patient";
 
 }
 
