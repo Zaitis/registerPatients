@@ -18,8 +18,7 @@ public class PatientController {
     public PatientController(PatientService patientService) {
         this.patientService = patientService;
     }
-
-
+    
 @RequestMapping(value = "/patient", method = RequestMethod.POST,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 public String  addPatient(Patient patient){
      patient.setPatientFile("BRAK");
